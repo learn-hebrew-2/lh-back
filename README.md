@@ -118,6 +118,8 @@
 
 ### MatrialCategoriesCollection:
 
+`collection item`
+
 - name: string
 
 
