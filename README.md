@@ -9,13 +9,22 @@
 ## Dictionary
 
 - add word item
-- delete word item
-- edit word item
+- remove word item
+- update word item
   - add translation
+  - remove translation
   - set progress
   - set study date
 - get word: {all, byId, my regex, by type, by progress}
 - get word translation(google api)
+- get word translations
+- get text translation
+- set word translation
+- set text translation
+- get word local translations
+- get text local translation
+- get GoogleApi word translation
+- get GoogleApi text translation
 
 
 
@@ -74,11 +83,19 @@
 
 
 
+`Word item` {word: string; translations: string[]}
+
+###LocalDictionary collection
+
+- Word item: `word item`
+
+
+
 ###User dictionary words collection.
 
 `User word item:`
 
-- Word item: Word item {word: string; translations: string[]}
+- Word item: `Word item`
 - Progress: Integer (min 0, max 100)
 - Last study date: Date
 - type: String ([word, phrase])
