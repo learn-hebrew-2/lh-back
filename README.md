@@ -98,7 +98,6 @@
 - Word item: `Word item`
 - Progress: Integer (min 0, max 100)
 - Last study date: Date
-- type: String ([word, phrase])
 
 
 
