@@ -1,4 +1,4 @@
-import WordItem from './worditem';
+import WordItem from './word.item';
 
 class UserWordItem extends WordItem {
     private _progress: number;
