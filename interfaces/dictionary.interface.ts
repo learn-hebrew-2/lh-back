@@ -1,5 +1,5 @@
-import UserWordItem from "../dto/userworditem";
-import WordItem from "../dto/worditem";
+import UserWordItem from "../dto/user-word.item";
+import WordItem from "../dto/word.item";
 
 export default interface DictionaryUser {
     addUserWord(word: string, translation: string[]): UserWordItem;
