@@ -8,13 +8,8 @@ export default interface DictionaryUser {
     getAllUserWords(): UserWordItem[];
     getUserWordByPattern(regex: string): UserWordItem[];
     getUserWordTranslations(word: String): String[];
-
-
     addGlobalWord(word: String, translations: string[]): WordItem;
-    updateGlobalWord(wordItem: WordItem): WordItem; 
+    updateGlobalWord(wordItem: WordItem): WordItem;
     getGlobalWordTranslations(word: string): string[];
-
     getGoogleApiWordTranslations(word: string): string[];
-
-    
 }
