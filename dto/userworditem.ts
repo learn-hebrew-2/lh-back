@@ -1,6 +1,6 @@
 import WordItem from './worditem';
 
-class UserWordItem extends WordItem {
+export default class UserWordItem extends WordItem {
     private _progress: number;
     private _userTranslations: string[];
     private _lastDateStudy: Date;
