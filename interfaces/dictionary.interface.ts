@@ -12,4 +12,10 @@ export default interface DictionaryUser {
     updateGlobalWord(wordItem: WordItem): WordItem;
     getGlobalWordTranslations(word: string): string[];
     getGoogleApiWordTranslations(word: string): string[];
+    setUserPhrase(phrase: string, translation: string): UserPhraseItem;
+    removeUserPhrase(id: string): UserPhraseItem;
+    updateUserPhraseItem(userPraseItem: UserPhraseItem): UserPhraseItem;
+    getAllUserPrases(): UserPhraseItem[];
+    getUserPhraseByPattern(regex: string): UserPhraseItem[];
+    getUserPhraseTranslation(phrase: String): String;
 }
