@@ -12,7 +12,9 @@ export default class UserItem {
   private _words: UserWordItem[];
   private _phrases: UserPhraseItem[];
 
-  constructor(id)
+  constructor(id: string, name: string, email: string, password: string, type: UserTypeItem, materials: string[], words: UserWordItem[], phrases: UserPhraseItem[]) {
+
+  }
 
   public get id(): string {
     return this._id;

@@ -1,9 +1,12 @@
-export default class UserPhraseItem {
+import DictionaryUnitItem from "./dictionary-unit.item";
+
+export default class UserPhraseItem extends DictionaryUnitItem {
   private _id: string;
   private _phrase: string;
   private _translation: string;
 
-  constructor(id: string, phrase: string, translation: String) {
+  constructor(id: string, phrase: string, translation: String, progress: number, lastDateStudy: Date) {
+    super(progress, lastDateStudy);
     this._id = id;
     this._phrase = phrase;
     this._translation;
