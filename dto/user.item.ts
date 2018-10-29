@@ -13,7 +13,14 @@ export default class UserItem {
   private _phrases: UserPhraseItem[];
 
   constructor(id: string, name: string, email: string, password: string, type: UserTypeItem, materials: string[], words: UserWordItem[], phrases: UserPhraseItem[]) {
-
+    this._id = id;
+    this._name = name;
+    this._email = email;
+    this._password = password;
+    this._type = type;
+    this._materials = materials;
+    this._words = words;
+    this._phrases = phrases;
   }
 
   public get id(): string {
