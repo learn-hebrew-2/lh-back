@@ -1,6 +1,7 @@
 import PermissionItem from './permission.item';
+import DictionaryUnitItem from './dictionary-unit.item';
 
-export default class UserTypeItem {
+export default class UserTypeItem extends DictionaryUnitItem {
   private _permissions: PermissionItem[];
 
   constructor(permissions?: PermissionItem[]) {

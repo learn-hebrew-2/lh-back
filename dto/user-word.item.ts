@@ -1,20 +1,14 @@
 import WordItem from './word.item';
+import DictionaryUnitItem from './dictionary-unit.item';
 
-export default class UserWordItem extends WordItem {
-    private _progress: number;
+export default class UserWordItem extends DictionaryUnitItem {
+    private _wordItem: WordItem;
     private _userTranslations: string[];
-    private _lastDateStudy: Date;
 
-    constructor() {
-        super();
-    }
-
-    get progress(): number {
-        return this._progress;
-    }
-
-    set progress(progress) {
-        this._progress = progress;
+    constructor(word: WordItem, userTranslations: string[], progress: number, lastDateStudy: Date) {
+        super(progress, lastDateStudy);
+        this._wordItem = word;
+        this._userTranslations = userTranslations;
     }
 
     get userTranslations(): string[] {
@@ -23,13 +17,5 @@ export default class UserWordItem extends WordItem {
 
     set userTranslations(userTranslations) {
         this._userTranslations = userTranslations;
-    }
-
-    get lastDateStudy(): Date {
-        return this._lastDateStudy;
-    }
-
-    set lastDateStudy(lastDateStudy) {
-        this._lastDateStudy = lastDateStudy;
     }
 }
