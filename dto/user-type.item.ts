@@ -12,9 +12,11 @@ export default class UserTypeItem implements AuthenticationInterface{
   getPermission(): PermissionItem {
     return null;
   };
+
   checkPermission(): boolean {
     return null;
   };
+  
   setPermissions(permissions: PermissionItem[]): OperationStatus {
     return null;
   };
