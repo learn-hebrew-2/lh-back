@@ -26,12 +26,4 @@ export default class WordItem {
     set translations(translations: string[]) {
         this._translations = translations; 
     }
-
-    get type(): string {
-        return this._type;
-    }
-    
-    set type(type: string) {
-        this._type = type; 
-    }
 }
