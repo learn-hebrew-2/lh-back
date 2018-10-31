@@ -5,14 +5,47 @@ export default class WordItem {
     private _id: string;
     private _word: string;
     private _translations: string[];
-    private _mongoSchema: mongoose.Schema;
-    private _mongoModel;
 
     constructor(id: string, word: string, translations: string[]){
         this._id = id;
         this._word = word;
         this._translations = translations;
-        this._mongoModel = mongoose.model('GlobalWord', this._mongoSchema);
+    }
+
+    static get schema() {
+        return new mongoose.Schema({
+            word: {
+                type: String,
+                required: true,
+                maxlength: 20
+            },
+            translations: {
+                type: [String],
+                required: true,
+                maxlength: 20
+            }
+        });
+    }
+
+    static get model() {
+        const schema = WordItem.schema;
+        return mongoose.model('GlobalWord', schema);
+    }
+
+    static validate(word: WordItem) {
+        const schema = {
+            word: Joi.string().required().max(20),
+            translations: Joi.array().items(Joi.string()).min(1).max(20).required()
+        }
+        return Joi.validate(word, schema);
+    }
+
+    get object() {
+        return {
+            id: this._id,
+            word: this._word,
+            translations: this._translations
+        }
     }
     
     get id(): string {
@@ -38,32 +71,4 @@ export default class WordItem {
     set translations(translations: string[]) {
         this._translations = translations; 
     }
-
-    static getMongoSchema() {
-        return new mongoose.Schema({
-            word: {
-                type: String,
-                required: true,
-                maxlength: 20
-            },
-            translations: {
-                type: [String],
-                required: true,
-                maxlength: 20
-            }
-        });
-    }
-
-    static getMongoModel(schema) {
-        return mongoose.model('GlobalWord', schema);
-    }
-
-    static validate(wordSchema) {
-        const schema = {
-            word: Joi.string().required().max(20),
-            translations: Joi.array().items(Joi.string()).min(1).max(20).required()
-        }
-        return Joi.validate(wordSchema, schema);
-    }
-
 }

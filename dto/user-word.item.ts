@@ -11,6 +11,13 @@ export default class UserWordItem extends DictionaryUnitItem {
         this._userTranslations = userTranslations;
     }
 
+    get object() {
+        return {
+            wordItem: this._wordItem,
+            userTranslations: this._userTranslations
+        }
+    }
+
     get userTranslations(): string[] {
         return this._userTranslations;
     }

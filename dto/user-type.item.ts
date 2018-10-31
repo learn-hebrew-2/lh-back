@@ -11,6 +11,14 @@ export default class UserTypeItem {
     this._permissions = permissions;
   }
 
+  public get object() {
+    return {
+      id: this._id,
+      name: this._name,
+      permission: this._permissions
+    }
+  }
+
   get id() {
     return this._id;
   }

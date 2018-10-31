@@ -11,6 +11,14 @@ export default class UserStatItem {
     this._score = score;
   }
 
+  public get object() {
+    return {
+      date: this._date,
+      type: this._type,
+      score: this._score
+    }
+  }
+
   public get date(): Date {
     return this._date;
   }
