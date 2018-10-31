@@ -12,6 +12,14 @@ export default class UserPhraseItem extends DictionaryUnitItem {
     this._translation;
   }
 
+  public get object() {
+    return {
+      id: this._id,
+      phrase: this._phrase,
+      translation: this._translation
+    }
+  }
+
   get id() {
     return this._id;
   }

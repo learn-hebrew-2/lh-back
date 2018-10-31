@@ -13,6 +13,15 @@ export default class MaterialItem {
     this._statistics = new MaterialStatItem();
   }
 
+  public get object() {
+    return {
+      id: this._id,
+      title: this._title,
+      categories: this._categories,
+      statistics: this._statistics
+    }
+  }
+
   public get id(): string {
     return this._id;
   }

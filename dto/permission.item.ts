@@ -7,6 +7,13 @@ export default class PermissionItem {
     this._permission = method;
   }
 
+  public get object(){
+    return {
+      id: this._id,
+      permission: this._permission
+    }
+  }
+
   public id() {
     return this._id;
   }

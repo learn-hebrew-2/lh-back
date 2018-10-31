@@ -1,3 +1,16 @@
 {
-    "db": ""
+    "db": "",
+    "validation": {
+        "user": {
+            "name": {
+                "length": {
+                    "min": 0,
+                    "max": 30
+                }
+            },
+            "email": {
+                "regexp": "/^\w+[A-Za-z0-9-_]*@\w+[A-Za-z0-9-_]+.{1}[A-Za-z]+$/"
+            }
+        }
+    }
 }
