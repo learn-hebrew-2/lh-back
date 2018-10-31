@@ -1,4 +1,4 @@
-export default class DictionaryUnitItem {
+export default abstract class DictionaryUnitItem {
   private _progress: number;
   private _lastDateStudy: Date;
 
