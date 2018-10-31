@@ -1,4 +1,4 @@
-export default class NotFoundMediaException extends Error {
+export default class IllegalArgumentExeptio extends Error {
   constructor(message: string) {
     super(message);
   }
