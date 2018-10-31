@@ -17,5 +17,10 @@ export default class CategoryItem {
         this._name = value;
     }
 
-
+    public get object() {
+        return {
+            id: this._id,
+            name: this._name
+        }
+    }
 }
