@@ -77,10 +77,10 @@ export default interface DictionaryUser {
     getGlobalWords(first?: number, last?: number): WordItem[];
     getGlobalWordTranslations(word: string): string[];
     getGoogleApiWordTranslations(word: string): string[];
-    setUserPhrase(phrase: string, translation: string): UserPhraseItem;
+    addUserPhrase(phrase: string, translation: string): UserPhraseItem;
     removeUserPhrase(id: string): UserPhraseItem;
-    updateUserPhraseItem(userPraseItem: UserPhraseItem): UserPhraseItem;
-    getAllUserPrases(): UserPhraseItem[];
+    updateUserPhrase(userPraseItem: UserPhraseItem): UserPhraseItem;
+    getUserPrases(fitst?: number, last?: number): UserPhraseItem[];
     getUserPhraseByPattern(regex: string): UserPhraseItem[];
     getUserPhraseTranslation(phrase: String): String;
 }

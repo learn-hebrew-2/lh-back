@@ -21,6 +21,7 @@ export default interface AuthenticationInterface {
    * @param userType: UserTypeItem
    * @returns created user type item record;
    * @throws ExistingMediaException if such user type item already exists;
+   * @throws IllegalArgumentException if given data is not valid;
    */
   addUserType(userType: UserTypeItem): UserTypeItem;
   /**
@@ -29,6 +30,7 @@ export default interface AuthenticationInterface {
    * @param userType 
    * @returns updated UserTypeItem;
    * @throws NoSuchMediaException if there is no user type item with given id;
+   * @throws IllegalArgumentException if given data is not valid;
    */
   editUserType(id: string, userType: UserTypeItem): UserTypeItem;
   /**
@@ -36,15 +38,19 @@ export default interface AuthenticationInterface {
    * @param id 
    * @returns deleted UserTypeItem;
    * @throws NoSuchMediaException if there is no UserTypeItem with given id;
+   * @throws IllegalArgumentException if given data is not valid;
    */
   deleteUserType(id: string): UserTypeItem;
   /**
+   * @param id of user 
+   * @param requirements: PermissionItem[] contains only permisions with will
+   * be checked 
    * @returns true if all the requirements are present in
    * particular UserType with given id;
    * @throws NoSuchMediaException if there is no UserTypeItem with given id;
    * @throws IllegalArgumentException if given data is not valid;
    */
-  checkPermissions(id: string, requirements: PermissionItem): boolean;
+  checkPermissions(id: string, requirements: PermissionItem[]): boolean;
   /**
    * assigns given permissions array to particular UserType with given id;
    * @param permissions 
@@ -54,6 +60,13 @@ export default interface AuthenticationInterface {
   /**
    * adds given permission to the particular UserType 
    * @throws NoSuchMediaException if there is no UserTypeItem with given id;
+   * @throws IllegalArgumentException if given data is not valid;
    */
   addPermissions(id: string, permissions: PermissionItem[]): OperationStatus;
+  /**
+   * remove given permission of the particular UserType 
+   * @throws NoSuchMediaException if there is no UserTypeItem with given id;
+   * @throws IllegalArgumentException if given data is not valid;
+   */
+  removePermissions(id: string, permissions: PermissionItem[]): OperationStatus;
 }
